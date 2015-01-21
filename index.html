@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="home home-1">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple swipe</title>
+	
+	<meta name="viewport" content="width=device-width">
+
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/simpleswipe-jplugin.js"></script>
+	<style>
+		body {
+			margin:0; padding:20px;
+			background:#FAFAFA; color:#333;
+			font:13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		h1 {
+			margin:0 0 1em; padding-bottom:0.2em;
+			border-bottom:1px solid #CCC;
+			font:italic normal 26px/1.5 Georgia, 'Times New Roman', serif;
+		}
+		#block{
+			margin-bottom:30px; padding:10px 30px;
+			border-bottom:5px solid #36A1AD;
+			background:#3DB3C1; color:#FFF;
+		}
+		#block2{
+			padding:10px 30px;
+			border-bottom:5px solid #E08480;
+			background:#F1A88E; color:#FFF;
+		}
+	</style>
+</head>
+<body>
+	<h1>Simple swipe</h1>
+	<p>Required: jquery.js - simpleswipe-jplugin.js</p>
+	<p>5 events: click - right - longright - left - longleft 
+		<small><em>(desktop only supports click)</em></small>
+	</p>
+
+	<div id="block" class="simpleswipe">
+		<p>Swipe this block :</p>
+	</div>
+	<div id="block2" class="simpleswipe" data-swipe="changeNews">
+		<p>Swipe this block :</p>
+	</div>
+
+	<script>
+	$('.simpleswipe').simpleswipe({
+		largeSwipe : 250,
+		callback : function(elm, swipeType){
+			console.log(elm);
+			console.log(swipeType);
+			var $elm = $(elm).find('p');
+			switch(swipeType){
+				case 'click' :
+					$elm.append(' click');
+					break;
+				case 'right' :
+					$elm.append(' right');
+					break;
+				case 'longright' :
+					$elm.append(' longright');
+					break;
+				case 'left' :
+					$elm.append(' left');
+					break;
+				case 'longleft' :
+					$elm.append(' longleft');
+					break;
+				default:
+					$elm.append(' this type is undefined :/');
+					break;
+			}
+		}
+	});
+	</script>
+</body>
+</html>
