@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-FR" class="home home-1">
+<html lang="fr-FR">
 <head>
 	<meta charset="UTF-8">
 	<title>Simple swipe</title>
@@ -12,11 +12,11 @@
 		body {
 			margin:0; padding:20px;
 			background:#FAFAFA; color:#333;
-			font:13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font:13px/1.5 Helvetica, Arial, sans-serif;
 		}
 		h1 {
 			margin:0 0 1em; padding-bottom:0.2em;
-			border-bottom:1px solid #CCC;
+			border-bottom:3px double #CCC;
 			font:italic normal 26px/1.5 Georgia, 'Times New Roman', serif;
 		}
 		#block{
@@ -33,10 +33,20 @@
 </head>
 <body>
 	<h1>Simple swipe</h1>
-	<p>Required: jquery.js - simpleswipe-jplugin.js</p>
-	<p>5 events: click - right - longright - left - longleft 
-		<small><em>(desktop only supports click)</em></small>
-	</p>
+	<h2>Required:</h2>
+	<ul>
+		<li>jquery.js</li>
+		<li>simpleswipe-jplugin.js</li>
+	</ul>
+	<h2>5 events:</h2>
+	<ul>
+		<li>click</li>
+		<li>right</li>
+		<li>longright</li>
+		<li>left</li>
+		<li>longleft </li>
+	</ul>
+	<p><small><em>(desktop only supports click)</em></small></p>
 
 	<div id="block" class="simpleswipe">
 		<p>Swipe this block :</p>
@@ -47,7 +57,7 @@
 
 	<script>
 	$('.simpleswipe').simpleswipe({
-		largeSwipe : 250
+		longSwipeMin : 250
 	});
 	$('.simpleswipe').on('swipeclick', function(){
 		$(this).find('p').append(' swipeclick');
