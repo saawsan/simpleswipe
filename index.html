@@ -41,38 +41,28 @@
 	<div id="block" class="simpleswipe">
 		<p>Swipe this block :</p>
 	</div>
-	<div id="block2" class="simpleswipe" data-swipe="changeNews">
+	<div id="block2" class="simpleswipe">
 		<p>Swipe this block :</p>
 	</div>
 
 	<script>
 	$('.simpleswipe').simpleswipe({
-		largeSwipe : 250,
-		callback : function(elm, swipeType){
-			console.log(elm);
-			console.log(swipeType);
-			var $elm = $(elm).find('p');
-			switch(swipeType){
-				case 'click' :
-					$elm.append(' click');
-					break;
-				case 'right' :
-					$elm.append(' right');
-					break;
-				case 'longright' :
-					$elm.append(' longright');
-					break;
-				case 'left' :
-					$elm.append(' left');
-					break;
-				case 'longleft' :
-					$elm.append(' longleft');
-					break;
-				default:
-					$elm.append(' this type is undefined :/');
-					break;
-			}
-		}
+		largeSwipe : 250
+	});
+	$('.simpleswipe').on('swipeclick', function(){
+		$(this).find('p').append(' swipeclick');
+	});
+	$('.simpleswipe').on('swipeleft', function(){
+		$(this).find('p').append(' swipeleft');
+	});
+	$('.simpleswipe').on('swipelongleft', function(){
+		$(this).find('p').append(' swipelongleft');
+	});
+	$('.simpleswipe').on('swiperight', function(){
+		$(this).find('p').append(' swiperight');
+	});
+	$('.simpleswipe').on('swipelongright', function(){
+		$(this).find('p').append(' swipelongright');
 	});
 	</script>
 </body>
