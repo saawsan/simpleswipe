@@ -56,24 +56,25 @@
 	</div>
 
 	<script>
-	$('.simpleswipe').simpleswipe({
-		longSwipeMin : 250
-	});
-	$('.simpleswipe').on('swipeclick', function(){
-		$(this).find('p').append(' swipeclick');
-	});
-	$('.simpleswipe').on('swipeleft', function(){
-		$(this).find('p').append(' swipeleft');
-	});
-	$('.simpleswipe').on('swipelongleft', function(){
-		$(this).find('p').append(' swipelongleft');
-	});
-	$('.simpleswipe').on('swiperight', function(){
-		$(this).find('p').append(' swiperight');
-	});
-	$('.simpleswipe').on('swipelongright', function(){
-		$(this).find('p').append(' swipelongright');
-	});
+		$('.simpleswipe').simpleswipe({
+			longSwipeMin : 250
+		});
+		
+		$('.simpleswipe').on('swipeclick', function(){
+			$(this).find('p').append(' swipeclick');
+		});
+		$('.simpleswipe').on('swipeleft', function(){
+			$(this).find('p').append(' swipeleft');
+		});
+		$('.simpleswipe').on('swipelongleft', function(){
+			$(this).find('p').append(' swipelongleft');
+		});
+		$('.simpleswipe').on('swiperight', function(){
+			$(this).find('p').append(' swiperight');
+		});
+		$('.simpleswipe').on('swipelongright', function(){
+			$(this).find('p').append(' swipelongright');
+		});
 	</script>
 </body>
 </html>
