@@ -114,5 +114,5 @@
 // des événements personnalisés ? par exemple :
 // $(elm).trigger('swipeleft') >> ok
 // touchstart : support IE (cf pointer events)
-// difficile de voir un rapport entre un click et des swipes
+// difficile de voir un rapport entre un click et des swipes >> OK
 // ne faudrait-il pas plutôt supporter la même gestuelle avec la souris ?*/
